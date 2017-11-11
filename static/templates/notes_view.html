@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+
+
+<html>
+    <head>
+       <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    </head>
+ 
+    <body>
+        <div style="font-family:'Calibri'; width:20%; background-color:'gray';">
+              {% for note in notes.all %}
+                   <ul>
+                       <h3> {{ note.title }} </h3> 
+                       <h5> {{ note.created_on }} - {{ note.text }} </h5>
+                   </ul>
+               {% endfor %}
+        </div>
+    </body>
+</html>
